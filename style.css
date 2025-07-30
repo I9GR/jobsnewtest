@@ -1,0 +1,301 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #666a7a 0%, #67517e 100%);
+    min-height: 100vh;
+    padding: 2rem;
+    color: #333;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+/* Input Container */
+body > input, body > button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Field Styling */
+input[type="text"] {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    background: white;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2), 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder {
+    color: #9ca3af;
+    opacity: 0.8;
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(135deg, #c1caf0 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+/* Table Container */
+#jobtable {
+    width: 100%;
+    max-width: 1000px;
+    margin: 3rem auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border-collapse: collapse;
+}
+
+/* Table Header */
+#jobtable thead {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+#jobtable th {
+    padding: 1.5rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+/* Table Body */
+#jobtable td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+#jobtable tbody tr {
+    transition: all 0.3s ease;
+}
+
+#jobtable tbody tr:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: scale(1.01);
+}
+
+#jobtable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Action Buttons in Table */
+#jobtable button {
+    display: inline-block;
+    width: auto;
+    max-width: none;
+    margin: 0 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 8px;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 500;
+}
+
+/* Edit Button */
+#jobtable button[onclick*="editrow"] {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+#jobtable button[onclick*="editrow"]:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Delete Button */
+#jobtable button[onclick*="deleterow"] {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+#jobtable button[onclick*="deleterow"]:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+/* Empty Table State */
+#jobtable tbody:empty::after {
+    content: "No jobs added yet. Start by adding your first job application above.";
+    display: block;
+    text-align: center;
+    padding: 3rem;
+    color: #6b7280;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    body > input, body > button {
+        max-width: 100%;
+        margin: 0.75rem auto;
+    }
+    
+    #jobtable {
+        margin: 2rem auto;
+        border-radius: 12px;
+    }
+    
+    #jobtable th,
+    #jobtable td {
+        padding: 1rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    #jobtable button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        margin: 0.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    #jobtable {
+        font-size: 0.8rem;
+    }
+    
+    #jobtable th,
+    #jobtable td {
+        padding: 0.75rem 0.25rem;
+    }
+    
+    #jobtable button {
+        display: block;
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+    
+    /* Stack buttons vertically on very small screens */
+    #jobtable td:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#jobtable {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Focus and Accessibility */
+button:focus,
+input:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Glass effect enhancement */
+#jobtable,
+input[type="text"] {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Subtle glow effect for the main container */
+#jobtable {
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}

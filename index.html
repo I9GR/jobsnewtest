@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>job search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>job Tracker</h1>
+
+    <input id="search" name="search" type="text" placeholder="Job Titele">
+    <input id="company"  name="compan" type="text" placeholder="Company">
+    <input id="status" name="status" type="text" placeholder="job description">
+    <button onclick="addrow()">save job</button>
+    <button onclick="clearAll()">Clear All</button>
+
+
+    <table id="jobtable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Company</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <!-- في الjs -->
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
